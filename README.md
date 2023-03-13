@@ -32,9 +32,9 @@ Use the terminal or an Anaconda Prompt for the following steps:
 
   - Verify that the new environment was installed correctly:
 
-  - Command: conda env list
+  ** Command: conda env list **
     or
-  - Command: conda info --envs.
+  ** Command: conda info --envs. **
 
 
 
