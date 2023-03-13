@@ -21,21 +21,17 @@ python < scriptname.py >
 #Setting up the environment:
 Use the terminal or an Anaconda Prompt for the following steps:
 
- 1) Create the environment from the environment.yml file:
+ 1) Create the environment from the environment file from the file given the repo:
 
-  - command: conda env create -f environment.yml
+  - command: **conda env create -f env.yml**
   - The first line of the yml file sets the new environment's name. 
    
- 2) Creating an environment file manually.
+ 2) Creating the virtual environment manually.
 
-  - Activate the new environment: conda activate myenv
+  - Activate the new environment: conda activate mle-dev
 
   - Verify that the new environment was installed correctly:
 
-  ** Command: conda env list **
-    or
-  ** Command: conda info --envs. **
-
-
-
-
+  - Command: **conda env list**
+  - or
+  - Command: **conda info --envs**
