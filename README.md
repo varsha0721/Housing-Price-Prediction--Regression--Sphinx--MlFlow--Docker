@@ -18,7 +18,7 @@ The following techniques have been used:
 python < scriptname.py >
 
 
-#Setting up the environment:
+## Setting up the environment:
 Use the terminal or an Anaconda Prompt for the following steps:
 
  1) Create the environment from the environment file from the file given the repo:
@@ -35,3 +35,14 @@ Use the terminal or an Anaconda Prompt for the following steps:
   - Command: **conda env list**
   - or
   - Command: **conda info --envs**
+
+## Tools and commands used for Manual code formatting
+
+1) black
+   - Command: **black < filename.py >**
+
+2) isort
+   - Command: **isort < filename.py >**
+
+3) flake8
+   - Command **flake8 < filename.py >**
