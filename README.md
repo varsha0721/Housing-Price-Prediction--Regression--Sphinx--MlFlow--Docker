@@ -1,8 +1,8 @@
 # Median housing value prediction
 
-The housing data can be downloaded from https://raw.githubusercontent.com/ageron/handson-ml/master/. The script has codes to download the data. We have modelled the median house value on given housing data. 
+The housing data can be downloaded from https://raw.githubusercontent.com/ageron/handson-ml/master/. The script has codes to download the data. We have modelled the median house value on given housing data.
 
-The following techniques have been used: 
+The following techniques have been used:
 
  - Linear regression
  - Decision Tree
@@ -21,11 +21,11 @@ python < scriptname.py >
 ## Setting up the environment:
 Use the terminal or an Anaconda Prompt for the following steps:
 
- 1) Create the environment from the environment file from the file given the repo:
+ 1) Create the environment from the environment file from the .env file given in the repo:
 
   - command: **conda env create -f env.yml**
-  - The first line of the yml file sets the new environment's name. 
-   
+  - The first line of the yml file sets the new environment's name.
+
  2) Creating the virtual environment manually.
 
   - Activate the new environment: conda activate mle-dev
@@ -46,3 +46,6 @@ Use the terminal or an Anaconda Prompt for the following steps:
 
 3) flake8
    - Command **flake8 < filename.py >**
+
+
+**Note:** The settings.json file contains all the refactor configurations. Bu using this file we don't need any commands to run explicitly. It will auto format the code while saving the file
