@@ -2,11 +2,11 @@
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
-        "--max-line-length=88",
-        "--ignore=E402,F841,F401,E302,E305",
+        "--max-line-length=250",
+        "--ignore=E402,F841,F401,E302,E305,E231",
     ],
     "python.formatting.blackArgs": [
-        "--line-length=88"
+        "--line-length=100"
     ],
     "[python]": {
         "editor.codeActionsOnSave": {

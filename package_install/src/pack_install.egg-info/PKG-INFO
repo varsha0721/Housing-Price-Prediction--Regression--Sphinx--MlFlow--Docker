@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: pack-install
+Version: 1.0
+Summary: This package tells if the given package is installed in your environment or not
+Author: Varsha Rajawat
+Author-email: varsha.rajawat@tigeranalytics.com
+License-File: License
+
+The package takes the list of package and returns an dictonery with two keys and two lists as values for the respective keys.The two lists contains the list of installed and not installed package in your environment.

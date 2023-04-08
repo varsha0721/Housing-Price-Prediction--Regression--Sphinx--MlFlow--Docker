@@ -1,0 +1,10 @@
+License
+README.md
+setup.py
+src/pack_install/__init__.py
+src/pack_install/find_installed_package.py
+src/pack_install.egg-info/PKG-INFO
+src/pack_install.egg-info/SOURCES.txt
+src/pack_install.egg-info/dependency_links.txt
+src/pack_install.egg-info/requires.txt
+src/pack_install.egg-info/top_level.txt
