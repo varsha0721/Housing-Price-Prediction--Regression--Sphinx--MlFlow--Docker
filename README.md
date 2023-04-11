@@ -21,31 +21,43 @@ python < scriptname.py >
 ## Setting up the environment:
 Use the terminal or an Anaconda Prompt for the following steps:
 
- 1) Create the environment from the environment file from the .env file given in the repo:
+ 1) Create the environment from the environment.yml file:
 
-  - command: **conda env create -f env.yml**
-  - The first line of the yml file sets the new environment's name.
+    command: conda env create -f environment.yml
+    The first line of the yml file sets the new environment's name.
 
- 2) Creating the virtual environment manually.
+ 2) Creating an environment file manually.
 
-  - Activate the new environment: conda activate mle-dev
+  - Activate the new environment: conda activate myenv
 
   - Verify that the new environment was installed correctly:
 
-  - Command: **conda env list**
-  - or
-  - Command: **conda info --envs**
+    Command: conda env list
+    or
+    Command: conda info --envs.
 
-## Tools and commands used for Manual code formatting
-
-1) black
-   - Command: **black < filename.py >**
-
-2) isort
-   - Command: **isort < filename.py >**
-
-3) flake8
-   - Command **flake8 < filename.py >**
+## VS Code IDE Configuration
+User setting files contain
+ - "workbench.editor.enablePreview": false,
+ - "python.formatting.provider": "black",
+ - "editor.formatOnSave": true
 
 
-**Note:** The settings.json file contains all the refactor configurations. Bu using this file we don't need any commands to run explicitly. It will auto format the code while saving the file
+## Commands Used to format the script
+black nonstandardcode.py
+isort nonstandardcode.py
+flake8 nonstandardcode.py
+
+
+## Implimentation of below concepts:
+ - Divided the code into three different scripts.
+   1) ingest_data.py
+   2) train.py
+   3) score.py
+
+ - ``argparse`` module to accept user inputs.
+ - ``logging`` module to write console and log files.
+ - ``pickle`` module to dump and reuse the model objects.
+ - ``unittest`` module to write test cases
+ - ``sphinx`` module to write the documentation.
+ - ``packaging`` - Created own package and installed it.
