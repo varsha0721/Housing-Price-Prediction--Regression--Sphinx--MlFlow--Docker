@@ -61,3 +61,10 @@ flake8 nonstandardcode.py
  - ``unittest`` module to write test cases
  - ``sphinx`` module to write the documentation.
  - ``packaging`` - Created own package and installed it.
+
+
+## MLFlow Server
+ - To start the MLFlow server, go to project root path in terminal and run the command:
+`mlflow server --backend-store-uri mlruns/ --default-artifact-root mlruns/ --host 127.0.0.1 --port 5000`
+ - After this, we can go to a browser and open the server at url `http://localhost:5000/ ` and track the
+progress of runs under various experiments.
