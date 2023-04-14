@@ -57,24 +57,10 @@ if __name__ == "__main__":
         ) as child_run2:
 
             mlflow.log_param("child-train", "yes")
+            
             log.info("MLFlow child process for train started!")
 
             train.train_main()
-            """train.package_install_status()
-
-            train.load_housing_data()
-
-            train.train_and_test_split()
-
-            train.EDA()
-
-            train.process_train_data()
-
-            train.model_training()
-
-            train.process_test_data()
-
-            train.model_object_pkl()"""
 
         with mlflow.start_run(
             run_name="CHILD_RUN-score",
@@ -83,14 +69,7 @@ if __name__ == "__main__":
         ) as child_run3:
 
             mlflow.log_param("child-score", "yes")
-
-            score.score_main()
+            
             log.info("MLFlow child process for score started!")
-
-            """score.package_install_status()
-
-            score.load_model_objects()
-
-            score.model_testing()
-
-            score.prediction_output()"""
+            
+            score.score_main()
