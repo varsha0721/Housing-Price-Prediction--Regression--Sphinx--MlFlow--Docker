@@ -17,6 +17,10 @@ The following techniques have been used:
 ## To excute the script
 python < scriptname.py >
 
+## Export your active environment to a new file:
+```
+conda env export > env.yml
+```
 
 ## Setting up the environment:
 Use the terminal or an Anaconda Prompt for the following steps:
