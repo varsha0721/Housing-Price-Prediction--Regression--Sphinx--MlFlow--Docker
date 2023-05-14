@@ -11,7 +11,8 @@
     "[python]": {
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
-        }
+        },
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "isort.args": [
         "--profile",
@@ -19,5 +20,6 @@
     ],
     "editor.tabSize": 4,
     "files.trimTrailingWhitespace": true,
-    "python.defaultInterpreterPath": "C:\\Users\\varsha.rajawat\\.conda\\envs\\mle-dev"
+    "python.defaultInterpreterPath": "C:\\Users\\varsha.rajawat\\.conda\\envs\\mle-dev",
+    "python.formatting.provider": "none"
 }
