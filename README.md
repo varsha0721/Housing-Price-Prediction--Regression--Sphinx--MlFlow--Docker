@@ -15,15 +15,21 @@ The following techniques have been used:
  - All the above said modelling techniques are tried and evaluated. The final metric used to evaluate is mean squared error.
 
 ## To excute the script
+```
 python < scriptname.py >
+```
 
+## Export your active environment to a new file:
+```
+conda env export > env.yml
+```
 
 ## Setting up the environment:
 Use the terminal or an Anaconda Prompt for the following steps:
 
  1) Create the environment from the environment.yml file:
 
-    command: conda env create -f environment.yml
+    command: ```conda env create -f environment.yml```
     The first line of the yml file sets the new environment's name.
 
  2) Creating an environment file manually.
@@ -32,9 +38,9 @@ Use the terminal or an Anaconda Prompt for the following steps:
 
   - Verify that the new environment was installed correctly:
 
-    Command: conda env list
+    Command: ```conda env list```
     or
-    Command: conda info --envs.
+    Command: ```conda info --envs```
 
 ## VS Code IDE Configuration
 User setting files contain
@@ -44,9 +50,15 @@ User setting files contain
 
 
 ## Commands Used to format the script
+```
 black nonstandardcode.py
+```
+```
 isort nonstandardcode.py
+```
+```
 flake8 nonstandardcode.py
+```
 
 
 ## Implimentation of below concepts:
@@ -65,6 +77,12 @@ flake8 nonstandardcode.py
 
 ## MLFlow Server
  - To start the MLFlow server, go to project root path in terminal and run the command:
-`mlflow server --backend-store-uri mlruns/ --default-artifact-root mlruns/ --host 127.0.0.1 --port 5000`
- - After this, we can go to a browser and open the server at url `http://localhost:5000/ ` and track the
+```mlflow server --backend-store-uri mlruns/ --default-artifact-root mlruns/ --host 127.0.0.1 --port 5000```
+ - After this, we can go to a browser and open the server at url ```http://localhost:5000/``` and track the
 progress of runs under various experiments.
+
+
+## Install package .whl file
+```
+pip install pack_install-1.0-py3-none-any.whl
+```
