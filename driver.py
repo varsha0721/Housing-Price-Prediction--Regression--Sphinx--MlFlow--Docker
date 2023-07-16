@@ -32,7 +32,6 @@ if __name__ == "__main__":
         tags={"version": "v0.4", "priority": "P1"},
         description="parent",
     ) as parent_run:
-
         log.info("MLFlow parent process started!")
         mlflow.log_param("parent-driver", "yes")
 
@@ -43,7 +42,6 @@ if __name__ == "__main__":
             description="First Child - Fetching all the data",
             nested=True,
         ) as child_run:
-
             mlflow.log_param("child-ingest_data", "yes")
 
             log.info("MLFlow child process for ingest_data started!")
@@ -55,9 +53,8 @@ if __name__ == "__main__":
             description="Second Child - Preprocessong, EDA and model training",
             nested=True,
         ) as child_run2:
-
             mlflow.log_param("child-train", "yes")
-            
+
             log.info("MLFlow child process for train started!")
 
             train.train_main()
@@ -67,9 +64,8 @@ if __name__ == "__main__":
             description="Third Child - Checking scores of all the models ",
             nested=True,
         ) as child_run3:
-
             mlflow.log_param("child-score", "yes")
-            
+
             log.info("MLFlow child process for score started!")
-            
+
             score.score_main()
