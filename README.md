@@ -29,7 +29,8 @@ Use the terminal or an Anaconda Prompt for the following steps:
 
  1) Create the environment from the environment.yml file:
 
-    command: ```conda env create -f environment.yml```
+    command: ```conda env create -f env.yml```
+
     The first line of the yml file sets the new environment's name.
 
  2) Creating an environment file manually.
@@ -41,6 +42,9 @@ Use the terminal or an Anaconda Prompt for the following steps:
     Command: ```conda env list```
     or
     Command: ```conda info --envs```
+
+ 3) Override the environment file manually.
+    ```conda env export > env.yml```
 
 ## VS Code IDE Configuration
 User setting files contain
@@ -85,4 +89,57 @@ progress of runs under various experiments.
 ## Install package .whl file
 ```
 pip install pack_install-1.0-py3-none-any.whl
+```
+
+## Docker
+Use Below steps to create a docker image and run it:
+
+- Create a ``requirements.txt`` file to install all of your enviorment packages to docker
+```
+pip list --format=freeze > requirements.txt
+```
+
+- Install Docker to your system
+
+- Create a ``Dockerfile`` according to your project requirements.
+
+- Run the command to build the docker image
+```
+docker build -t mlflow-container-housing_price_prediction .
+```
+
+- Run the command to run the docker image in your system
+```
+docker run -p 5000:5000 mlflow-container-housing_price_prediction
+```
+
+- Create a docker hub id and run the below commands to push the dockers image to dockerhub reposetory.
+1) To connect the dockerhub reposetory to your local system
+```
+docker login
+```
+
+2) To crate a tag for dockerhub repo with the version
+```
+docker tag mlflow-container-housing_price_prediction:latest protiger/mlflow-container-housing_price_prediction
+```
+
+3) To push the docker image to the docker hub repo.
+```
+ docker push protiger/mlflow-container-housing_price_prediction
+```
+
+4) To pull the image from dockehub repo to anyone's local system
+```
+docker pull protiger/mlflow-container-housing_price_prediction:latest
+```
+
+5) To run the downloaded image form docker hub
+```
+docker run -p 5000:5000 protiger/mlflow-container-housing_price_prediction:latest
+```
+
+6) To launch the mlflow from docker image
+```
+http://127.0.0.1:5000/
 ```
