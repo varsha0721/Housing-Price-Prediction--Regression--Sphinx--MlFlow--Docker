@@ -21,6 +21,7 @@ Console = True
 Log_level = "DEBUG"
 log = configure_logger(log_file, Console, Log_level)
 
+
 # Testing the package pack_install
 def package_install_status():
     required_package_list = ["os", "pickle", "numpy", "pandas", "sklearn"]
@@ -109,7 +110,13 @@ def model_testing(test, lin_reg, tree_reg, forest_reg, test_labels, final_forest
 def prediction_output(Prediction_output, output_path):
     # Writing the file with predicted house price
     mlflow.log_param("output_path", output_path)
-    Prediction_output.to_csv(os.path.join(output_path, "Prediction_output.csv"), index=False)
+    Prediction_output.to_csv(
+        os.path.join(
+            output_path,
+            "Prediction_output_{}.csv".format(pd.datetime.now().strftime("%Y-%m-%d %H%M%S")),
+        ),
+        index=False,
+    )
     log.debug("Prediction file is created")
 
 
@@ -130,6 +137,5 @@ def score_main():
 
 
 if __name__ == "__main__":
-
     score_main()
     printout()

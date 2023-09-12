@@ -113,6 +113,7 @@ docker build -t mlflow-container-housing_price_prediction .
 docker run -p 5000:5000 mlflow-container-housing_price_prediction
 ```
 
+### Docker Hub
 - Create a docker hub id and run the below commands to push the dockers image to dockerhub reposetory.
 1) To connect the dockerhub reposetory to your local system
 ```
@@ -140,6 +141,46 @@ docker run -p 5000:5000 protiger/mlflow-container-housing_price_prediction:lates
 ```
 
 6) To launch the mlflow from docker image
+```
+http://127.0.0.1:5000/
+```
+
+### Docker Volumes
+Docker Volumes spaces we can only access with docker tools. We cannot access files in our local system until we have certain permissions.
+
+Docker volums also we cannot create on our dezired location, it will only be created where docker is configured in our system. If we want to create volumes at a specific location then we need to change the configurations which we did while installing docker.
+
+- Run the command to Create the docker volume name ```output``` in your system
+```
+docker volume create output
+```
+
+- Run the command to see the status of docker volume
+```
+docker volume inspect output
+```
+
+- Run the command to build the new docker image
+```
+docker build -t mlflow-container-housing_price_prediction_with_volumes .
+```
+
+- Run the command to mount docker image to volume and run the docker containor
+This Command only run the docker image not mlflow server
+```
+docker run -d --name with_vol --mount source=output,destination=/TCE_2023/data/output mlflow-container-housing_price_prediction_with_volumes
+```
+This Command will run the docker image and mlflow server both
+```
+docker run -p 5000:5000 -d --name with_vol_and_mlflow --mount source=output,destination=/TCE_2023/data/output mlflow-container-housing_price_prediction_with_volumes
+```
+- Run these command to inspect the volume mounts
+```
+docker inspect with_vol | grep Mounts -A 10
+```
+
+
+- To launch the mlflow from docker image
 ```
 http://127.0.0.1:5000/
 ```

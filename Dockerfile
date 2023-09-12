@@ -9,6 +9,7 @@ LABEL author="Varsha Rajawat"
 
 # Copy the file to which contains all the required packages
 COPY requirements.txt .
+COPY run_dockerfile.py .
 
 # Copy the wheel file of package we created
 COPY pack_install-1.0-py3-none-any.whl .
@@ -28,5 +29,5 @@ COPY . /TCE_2023
 # Expose port for MLflow UI
 EXPOSE 5000
 
-# Start the MLflow server first then run the python script
-CMD ["sh", "-c", "mlflow server --host 0.0.0.0 && python3 driver.py"]
+# Run the Python script
+CMD ["python3", "run_dockerfile.py"]
