@@ -9,7 +9,6 @@ LABEL author="Varsha Rajawat"
 
 # Copy the file to which contains all the required packages
 COPY requirements.txt .
-COPY run_dockerfile.py .
 
 # Copy the wheel file of package we created
 COPY pack_install-1.0-py3-none-any.whl .
@@ -21,10 +20,7 @@ RUN pip install -r requirements.txt
 RUN pip install pack_install-1.0-py3-none-any.whl
 
 # Setting working direactery
-WORKDIR /TCE_2023
-
-# Copy the project files
-COPY . /TCE_2023
+WORKDIR /app
 
 # Expose port for MLflow UI
 EXPOSE 5000

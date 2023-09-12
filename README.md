@@ -184,3 +184,26 @@ docker inspect with_vol | grep Mounts -A 10
 ```
 http://127.0.0.1:5000/
 ```
+
+### Docker Mounts
+We use docker mounts to mount the docker image with local system like volumes but the difference is we can specify the location of our local system and also we don't need any docker app or enviorment to access the files we can access them by ourselves.
+
+- Run the command to build the new docker image
+```
+docker build -t mlflow-container-housing_price_prediction_with_local_mounts .
+```
+
+- Run the command to mount docker image to volume and run the docker containor
+This Command only run the docker image not mlflow server
+```
+docker run -v /mnt/c/Users/varsha.rajawat/Desktop/TCE_2023:/app mlflow-container-housing_price_prediction_with_local_mounts
+```
+This Command will run the docker image and mlflow server both
+```
+docker run -p 5000:5000 --name with_LocalMount_and_mlflow -v /mnt/c/Users/varsha.rajawat/Desktop/TCE_2023:/app mlflow-container-housing_price_prediction_with_local_mounts
+```
+
+- To launch the mlflow from docker image
+```
+http://127.0.0.1:5000/
+```

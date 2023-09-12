@@ -1,13 +1,10 @@
 import subprocess
 
 # Run your custom script or tasks here
-print("Running all three scripts...")
+print("Running driver script for parent child run...")
 
-subprocess.run(["python3", "ingest_data.py"])
-subprocess.run(["python3", "train.py"])
-subprocess.run(["python3", "score.py"])
-
-print("All scripts successfully ran...")
+subprocess.run(["python3", "driver.py"])
+print("Driver scripts successfully ran...")
 
 # Start MLflow
 print("Running MLflow...")
