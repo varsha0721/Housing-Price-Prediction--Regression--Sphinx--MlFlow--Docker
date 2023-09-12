@@ -19,9 +19,9 @@ DOWNLOAD_ROOT = (
 
 if __name__ == "__main__":
     # MLFlow server details
-    remote_server_uri = "http://127.0.0.1:5000"  # set to your server URI
+    # remote_server_uri = "http://127.0.0.1:5000"  # set to your server URI
 
-    mlflow.set_tracking_uri(remote_server_uri)  # or set the MLFLOW_TRACKING_URI in the env
+    # mlflow.set_tracking_uri(remote_server_uri)  # or set the MLFLOW_TRACKING_URI in the env
 
     exp_name = "House-price-prediction"
     mlflow.set_experiment(exp_name)
