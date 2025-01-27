@@ -1,4 +1,4 @@
-# Median housing value prediction
+# Housing value prediction
 
 The following techniques have been used:
 
